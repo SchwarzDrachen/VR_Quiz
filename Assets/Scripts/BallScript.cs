@@ -23,6 +23,10 @@ public class BallScript : MonoBehaviour
         xrGrab.lastSelectExited.AddListener(ReleaseBall); 
         xrGrab.selectEntered.AddListener(GrabBall); 
     }
+    private void OnDisable(){
+        isOnHand = false;
+        hasBeenGrabbed = false;
+    }
 
     void Update()
     {
@@ -33,12 +37,6 @@ public class BallScript : MonoBehaviour
             //do despawn
             Despawn();
         }
-    }
-
-    public void ResetState(){
-        isOnHand = false;
-        hasBeenGrabbed = false;
-        
     }
 
     private void ReleaseBall(SelectExitEventArgs arg){
@@ -58,6 +56,5 @@ public class BallScript : MonoBehaviour
     private void Despawn(){
         ObjectPoolManager.Instance.ReturnObjectToPool(this.gameObject);
         onBallDespawn?.Invoke();
-        ResetState();
     }
 }

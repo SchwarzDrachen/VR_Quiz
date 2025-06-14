@@ -14,6 +14,9 @@ public class BallSpawner : MonoBehaviour
         Debug.Log("Enabled SPawner");                
         BallScript.onBallGrab += ResetSpawnCountdown;
     }
+    private void OnEnable(){
+        SpawnBall();
+    }
 
     private void SpawnBall(){
         GameObject ball = ObjectPoolManager.Instance.Instantiate(prefabName,parent.position,parent.rotation);
