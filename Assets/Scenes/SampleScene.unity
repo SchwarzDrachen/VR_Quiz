@@ -3548,7 +3548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55cc80af2629c468b4965fc0a37e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 120
+  maxTime: 60
   currentTime: 60
   timeText: {fileID: 91821282}
   onGameTimerEnd:
